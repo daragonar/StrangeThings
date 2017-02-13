@@ -32,7 +32,7 @@ public class Pelicula {
 	
 	private String descripcionPel;
 	
-	@OneToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.EAGER)
 	private Set<Genero> generos;
 	
 	@ManyToMany(fetch = FetchType.EAGER)

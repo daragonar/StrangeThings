@@ -88,7 +88,7 @@
 							<div class="form-group">
 								<label for="">Descripcion</label>
 								<textarea name="descripcionPel" id="inputDescripcionPel"
-									class="form-control" rows="3"></textarea>
+									class="form-control" rows="3" maxlength="250"></textarea>
 							</div>
 
 							<div class="form-group">

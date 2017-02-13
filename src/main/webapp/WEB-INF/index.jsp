@@ -60,8 +60,7 @@
 				<div class="form-group">
 					<label for=""><spring:message code="views.index.user" /></label>
 					<input name="username" type="text" class="form-control" id="username" placeholder="Username">
-				</div>
-				<script type="text/javascript">				
+				</div>		
 				<div class="form-group">
 					<label for=""><spring:message code="views.index.lastname" /></label>
 					<input name="apellidoPer" type="text" class="form-control" id="" placeholder="Username">
