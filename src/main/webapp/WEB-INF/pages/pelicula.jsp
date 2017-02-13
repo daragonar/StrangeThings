@@ -30,7 +30,8 @@
 				<tbody>
 					<c:forEach items="${peliculas}" var="pelicula">
 						<tr data-id="${pelicula.idPel}">
-							<td>${pelicula.caratula}</td>
+							<td><img alt="${pelicula.caratula}" src="${pelicula.caratula}" style="max-height: 50px;max-width: 50px">
+							</td>
 							<td><a href='<c:url value="/peliculas/${pelicula.idPel}" />'> ${pelicula.nombrePel}</a></td>
 							<td><c:forEach items="${pelicula.generos}" var="gen">
 				-${gen.nombreGen}
@@ -74,14 +75,14 @@
 							</div>
 
 							<div class="form-group">
-								<label for="">caratula</label> <input type="text"
+								<label for="">caratula</label> <input type="url"
 									name="caratula" class="form-control" id=""
-									placeholder="Input field">
+									placeholder="Input field" data-validation="url" data-validation-regexp="(?i)\.(jpg|png|gif)$">
 							</div>
 
 							<div class="form-group">
-								<label for="">Trailer</label> <input type="text" name="trailer"
-									class="form-control" id="" placeholder="Input field">
+								<label for="">Trailer</label> <input type="url" name="trailer"
+									class="form-control" id="" placeholder="Input field" data-validation="url" data-validation-regexp="^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$">
 							</div>
 
 							<div class="form-group">

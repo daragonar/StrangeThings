@@ -25,6 +25,9 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
 	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
 	crossorigin="anonymous"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+	
 </head>
 
 <body>
@@ -98,9 +101,12 @@
 		        }
 		    } );
 		} );
-
-
 		</script>
+<script>
+  $.validate({
+    lang: 'es'
+  });
+</script>
 
 	</div>
 </body>

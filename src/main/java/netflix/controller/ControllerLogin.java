@@ -1,5 +1,7 @@
 package netflix.controller;
 
+import java.util.Set;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +12,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import netflix.PropertyEditors.PermisoPropertyEditors;
 import netflix.modelo.entidades.Genero;
@@ -44,7 +48,6 @@ public class ControllerLogin {
 		model.addAttribute("Mensaje", "Se ha registrado correctamente");
 		return "pages/login";
 	}
-	
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
 		webDataBinder.registerCustomEditor(Permiso.class, permipro);

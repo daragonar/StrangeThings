@@ -33,8 +33,26 @@
 		</div>
 		<hr>
 		<div class="row">
+		<script>
+		var id = youtube_parser("${pelicula.trailer}");
+		
+		function youtube_parser(url){
+		var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+		var match = url.match(regExp);
+		if (match&&match[2].length==11){
+		    return match[2];
+		}else{
+		    //error
+		}
+		}
+		var url ="https://www.youtube.com/embed/"+id;
+		console.log(url);
+		$(document).ready(function(){
+		$("#youtube").attr('src',url);
+		})
+		</script>
 		<div class="col-md-6">
-		<iframe class="col-md-12" src="${pelicula.trailer}" frameborder="0" allowfullscreen></iframe>
+		<iframe class="col-md-12" id="youtube" src=" " frameborder="0" allowfullscreen></iframe>
 		</div>
 </div>
 </div>
