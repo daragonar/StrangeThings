@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -32,14 +33,25 @@ public class ControllerPeliculas {
 	@RequestMapping(method = RequestMethod.POST)
 	public String InicioPorPost(Model model, @Valid @ModelAttribute Pelicula peli,BindingResult bindingResult) {
 		repopel.save(peli);
+		model.addAttribute("peliculas", repopel.findAll());
+		model.addAttribute("generos", repogene.findAll());
 		return "pages/pelicula";
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String InicioPorGet(Model model) {
+		model.addAttribute("peliculas", repopel.findAll());
 		model.addAttribute("generos", repogene.findAll());
 		return "pages/pelicula";
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/{id}")
+	public String detalle(Model model, @PathVariable Long id)
+	{
+		model.addAttribute("pelicula",repopel.findOne(id));
+		return "pages/detalle";
+	}
+	
 	
 	
 	@InitBinder

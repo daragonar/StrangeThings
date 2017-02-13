@@ -17,6 +17,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet"
 	href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+	
 <script src="//code.jquery.com/jquery.js"></script>
 <script
 	src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
@@ -62,10 +63,9 @@
 				</sec:authorize>
 			</ul>
 			
-			
 			<ul class="nav navbar-nav navbar-right">  
         <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Idioma <b class="caret"></b></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
         <ul class="dropdown-menu">
         <li>
 	        <a href="?lang=es_ES">
@@ -90,8 +90,17 @@
 </nav>
 	<div>
 		<sitemesh:write property='body' />
-		<spring:url value="/js/ingredientes.js" var="mainJs" />
-		<script src="${mainJs}"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+		    $('.table').DataTable( {
+		        "language": {
+		            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+		        }
+		    } );
+		} );
+
+
+		</script>
 
 	</div>
 </body>
