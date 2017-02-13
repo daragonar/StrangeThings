@@ -46,7 +46,6 @@
 		}
 		}
 		var url ="https://www.youtube.com/embed/"+id;
-		console.log(url);
 		$(document).ready(function(){
 		$("#youtube").attr('src',url);
 		})

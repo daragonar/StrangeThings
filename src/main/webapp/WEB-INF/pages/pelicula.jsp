@@ -12,6 +12,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript"
+	src="<c:url value="/static/js/pelis.js" />"></script>
 </head>
 <body>
 	<h3>Peliculas</h3>
@@ -37,10 +39,10 @@
 				-${gen.nombreGen}
 				</c:forEach></td>
 							<td>
-								<button type="button" class="btn btn-warning btn-editar-pizza">Editar</button>
+								<button type="button" class="btn btn-warning btn-editar-peli">Editar</button>
 							</td>
 							<td>
-								<button type="button" class="btn btn-danger btn-borrar-pizza">Deletar</button>
+								<button type="button" class="btn btn-danger btn-borrar-peli">Deletar</button>
 							</td>
 						</tr>
 					</c:forEach>
@@ -63,44 +65,42 @@
 					</div>
 					<div class="modal-body">
 
-
-
 						<form action="<c:url value="/peliculas" />" method="POST"
 							role="form">
 							<legend>Form title</legend>
 
 							<div class="form-group">
 								<label for="">Nombre</label> <input type="text" name="nombrePel"
-									class="form-control" id="" placeholder="Input field">
+									class="form-control" id="nombre" placeholder="Input field">
 							</div>
 
 							<div class="form-group">
 								<label for="">caratula</label> <input type="url"
-									name="caratula" class="form-control" id=""
+									name="caratula" class="form-control" id="caratula"
 									placeholder="Input field" data-validation="url" data-validation-regexp="(?i)\.(jpg|png|gif)$">
 							</div>
 
 							<div class="form-group">
 								<label for="">Trailer</label> <input type="url" name="trailer"
-									class="form-control" id="" placeholder="Input field" data-validation="url" data-validation-regexp="^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$">
+									class="form-control" id="trailer" placeholder="Input field" data-validation="url" data-validation-regexp="^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$">
 							</div>
 
 							<div class="form-group">
 								<label for="">Descripcion</label>
-								<textarea name="descripcionPel" id="inputDescripcionPel"
+								<textarea name="descripcionPel" id="DescripcionPel"
 									class="form-control" rows="3" maxlength="250"></textarea>
 							</div>
 
 							<div class="form-group">
 								<label for="">Genero</label> <select name="generos"
-									id="inputGeneros" class="form-control">
+									id="generos" class="form-control">
 									<c:forEach items="${generos}" var="genero">
 
 										<option value="${genero.idGen}">${genero.nombreGen}</option>
 									</c:forEach>
 								</select>
 							</div>
-							<input type="hidden" id="input" name="id" class="form-control"
+							<input type="hidden" id="idPel" name="idPel" class="form-control"
 								value=""> <input type="hidden" name="_csrf" id="_csrf"
 								class="form-control" value="${_csrf.token}">
 					</div>
