@@ -53,6 +53,19 @@
 		<div class="col-md-6">
 		<iframe class="col-md-12" id="youtube" src=" " frameborder="0" allowfullscreen></iframe>
 		</div>
+		<sec:authorize access="hasRole('ADMIN')">
+		<div class="col-md-6">
+		<h4>Historico de alquileres</h4>
+		<ul>
+			<c:forEach items="${pelicula.personas}" var="persona">
+				<li>
+					${persona.username}
+				</li>
+			</c:forEach>
+		</ul>
+		</div>
+		</sec:authorize>
+		
 </div>
 </div>
 </body>

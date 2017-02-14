@@ -93,4 +93,8 @@ public class Pelicula {
 	public void setPersonas(Set<Persona> personas) {
 		this.personas = personas;
 	}
+
+	public void addPersona(Persona newper) {
+		this.personas.add(newper);
+	}
 }

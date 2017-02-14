@@ -53,8 +53,7 @@
 
 
 	<sec:authorize access="hasRole('ADMIN')">
-		<a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Trigger
-			modal</a>
+		<a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Añadir Pelicula</a>
 		<div class="modal fade" id="modal-id">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -86,7 +85,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="">Descripcion</label>
+								<label for="">Descripción</label>
 								<textarea name="descripcionPel" id="DescripcionPel"
 									class="form-control" rows="3" maxlength="250"></textarea>
 							</div>
@@ -106,8 +105,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="submit" class="btn btn-primary">Save
-							changes</button>
+						<button type="submit" class="btn btn-primary">Guardar Pelicula</button>
 					</div>
 					</form>
 				</div>
