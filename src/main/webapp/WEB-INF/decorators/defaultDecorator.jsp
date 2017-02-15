@@ -39,8 +39,14 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">WebFlix</a>
+			<sec:authentication var="user" property="principal" />
+			<a class="navbar-brand" href="#">WebFlix  
+<sec:authorize access="isAuthenticated()">
+: ${user.username}
+</sec:authorize></a>
 		</div>
+
+
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">

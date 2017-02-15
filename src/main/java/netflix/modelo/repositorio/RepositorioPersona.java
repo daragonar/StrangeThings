@@ -9,4 +9,8 @@ public interface RepositorioPersona extends JpaRepository<Persona,Long>{
 
 	UserDetails findByUsername(String username);
 
+	Persona findByMailPer(String mailPer);
+
+	
+
 }
